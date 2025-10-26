@@ -136,28 +136,29 @@ body {
   color: #555;
 }
 
-/* =========================
-   PERSONNEL SECTION
-   ========================= */
-
-.personnel-section .person {
+.person {
   display: flex;
   gap: 28px;
-  align-items: flex-start;
-  margin: 30px 0;
+  padding: 10px 0 20px 0; /* 상단/하단 여백 정돈 */
+  border-bottom: 1px solid rgba(0,0,0,0.12); /* 구분선 ↑ */
+}
+
+.person:first-of-type {
+  border-top: 1px solid rgba(0,0,0,0.12);
 }
 
 .person-img {
-  width: 160px;        /* 세로형 비율 고려 */
-  height: 240px;       /* 2:3 비율 */
+  width: 160px;
+  height: 240px;
   overflow: hidden;
   flex-shrink: 0;
+  border-radius: 4px;  /* 살짝만 깎기, 기관사이트 느낌 */
 }
 
 .person-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;    /* 인물 사진 꽉 차게 */
+  object-fit: cover;
 }
 
 .person-info {
@@ -168,51 +169,31 @@ body {
 }
 
 .person-name {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
-  margin-bottom: 6px;
-  color: rgb(19,44,78);
+  color: #1b2d49; /* 진한 네이비톤 */
+  margin-bottom: 10px;
 }
 
-.person-desc {
+.person-detail {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   font-size: 15px;
   color: #333;
-  line-height: 1.6;
+  display: grid;
+  row-gap: 6px;
 }
 
-.divider-line {
-  width: 100%;
-  height: 1px;
-  background: rgba(0,0,0,0.1);
-  margin: 20px 0;
+.person-detail li {
+  display: flex;
+  gap: 20px;
+  line-height: 1.55;
 }
 
-body::-webkit-scrollbar {
-  width: 6px;
+.person-detail strong {
+  width: 95px;         /* 정확한 라벨 정렬 */
+  font-weight: 600;
+  color: #1b2d49;
+  flex-shrink: 0;
 }
-
-body::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.25);
-  border-radius: 4px;
-}
-
-body:hover::-webkit-scrollbar-thumb {
-  background: rgba(90,169,255,0.7);
-}
-
-html, body {
-  overflow: auto;
-}
-
-.psb-title-divider {
-  width: 100%;
-  height: 1px;
-  background: rgba(0,0,0,0.32);
-  margin: 16px 0 28px 0;  /* 위는 살짝, 아래는 여백 확보 */
-}
-
-
